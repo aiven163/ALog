@@ -8,15 +8,24 @@ usage is as follows:
 
 配置管理类：配置你的日志输出文件夹路径。日志将每天输出一个文档，已日期为名称的.txt文件。
 
+/**
+ * @author Aiven
+ * @date 2014-6-3  下午6:12:24
+ * @email aiven163@sina.com
+ * @Description 日志管理配置
+ */
 public class LogConfig {
+
 	/**
 	 * 是否开启Debug
 	 */
 	public static boolean Debug = false;
+	
 	/**
 	 * 谁否记录在客户端
 	 */
 	public static boolean recodeAble = false;
+	
 	/**
 	 * 日志目录文件夹名称(一般为应用名称)
 	 */
@@ -40,12 +49,15 @@ public class LogConfig {
 如何调用：
 
 首先：LogConfig.Debug = true; //开启日志输出
+
 如果要存本地文件：LogConfig.recodeAble=true;
 
 1、输出异常：
  
  catch (Exception e) {
+      
       Logs.logE(e);
+      
       }
       
 2、输出错误：
@@ -53,6 +65,7 @@ public class LogConfig {
       
 ......
 .....
+
 具体系统的Log和System.out.print方法相对应的都有。
 
 如果觉得代码有更好的优化或者更好的方法，欢迎一起更新
