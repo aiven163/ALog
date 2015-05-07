@@ -39,6 +39,9 @@ public class LogConfig {
 
 如何调用：
 
+首先：LogConfig.Debug = true; //开启日志输出
+如果要存本地文件：LogConfig.recodeAble=true;
+
 1、输出异常：
  
  catch (Exception e) {
