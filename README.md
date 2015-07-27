@@ -73,8 +73,7 @@ LogConfig.recodeAble=true;
   ```Java
     Logs.logError(String tag, String msg)
   ```
-......
-.....
+ 还有很多方法这里就不一一列举了，基本上系统Log有的方法，本库Logs也有
 
 具体系统的Log和System.out.print方法相对应的都有。<br>
 
