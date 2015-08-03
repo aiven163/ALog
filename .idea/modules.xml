@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ALog.iml" filepath="$PROJECT_DIR$/ALog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ALog/ALog-ALog.iml" filepath="$PROJECT_DIR$/ALog/ALog-ALog.iml" />
+    </modules>
+  </component>
+</project>
