@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 
-
 android {
     compileSdkVersion 22
     buildToolsVersion "23.0.0 rc3"
@@ -21,6 +20,11 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+
+
+
+
 
 
 

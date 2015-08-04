@@ -57,9 +57,9 @@ public class LogWriteUtils extends Thread {
 	private void initOs(LogMode mode) {
 		String filePath;
 		if (mode.isCrashInfo()) {
-			filePath = LogConfig.SAVE_PATH + "crash" + File.separator + LogTimeUtils.getInstance().getData() + ".txt";
+			filePath = LogConfig.getLogSavePath() + "crash" + File.separator + LogTimeUtils.getInstance().getData() + ".txt";
 		} else {
-			filePath = LogConfig.SAVE_PATH + LogTimeUtils.getInstance().getData() + ".txt";
+			filePath = LogConfig.getLogSavePath() + LogTimeUtils.getInstance().getData() + ".txt";
 		}
 		File f = new File(filePath);
 		if (checkFile(f)) {// 如果文件存在
