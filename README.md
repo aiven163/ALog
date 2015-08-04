@@ -8,7 +8,7 @@
 1、首先在我们的Application的onCreate方法中配置一下代码，如果你没有重新Application方法，可以再你的APP启动Activity的onCreate方法中
 去操作。<br>
 
- ```
+ ```Java
         /**
          * 开启日志管理工具
          */
@@ -33,7 +33,7 @@
 
 2、如何输出日志，具体我就不去写了，入口类是Logs，下面附上Logs.java的代码，大家就知道里面有些啥方法了，知道该咋调用。
 
-```
+```Java
 /**
  * @author Aiven
  * @date 2014-6-3  下午6:12:53
