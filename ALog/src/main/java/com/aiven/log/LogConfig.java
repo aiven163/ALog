@@ -23,7 +23,7 @@ public class LogConfig {
     /**
      * 存储路径根目录文件夹路径:注意，一定是文件夹路径
      */
-    public static String logSavefolderPath = "";
+    public static String logFileSavePath = "";
 
     /**
      * 日志目录文件夹名称(一般为应用名称)
@@ -33,8 +33,8 @@ public class LogConfig {
     public static final String DEFAULT_TAG = "--APPLOG--";
 
     public static String getLogSavePath() {
-        if (!TextUtils.isEmpty(logSavefolderPath)) {
-            return logSavefolderPath + File.separator + appRootName + File.separator;
+        if (!TextUtils.isEmpty(logFileSavePath)) {
+            return logFileSavePath + File.separator + appRootName + File.separator;
         } else {
             return Environment
                     .getExternalStorageDirectory() + File.separator + appRootName + File.separator;

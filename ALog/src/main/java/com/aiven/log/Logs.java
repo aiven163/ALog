@@ -1,14 +1,14 @@
 package com.aiven.log;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-
 import android.util.Log;
 
 import com.aiven.log.action.LogRecodeUtils;
 import com.aiven.log.model.LogMode;
+
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 
 /**
  * @author Aiven
@@ -246,5 +246,4 @@ public class Logs {
             }
         }
     }
-
 }
