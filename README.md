@@ -10,6 +10,11 @@
 
 #使用方式如下
 
+* 如果你使用Eclipse，请下载源码，作为一个library 项目引用<br/>
+* 如果你使用的是AndroidStrudio则可以再的App项目的build.gradle文件中添加下面代码即可，不用在下载源码和jar包<br/>
+    `compile 'com.aiven.log:ALog:1.0.0'`
+    
+
 1、首先在我们的Application的onCreate方法中添加以下代码，如果你没有重写Application类的话，可以在你APP的启动Activity的onCreate()方法中添加如下代码。<br>
 
  ```Java
