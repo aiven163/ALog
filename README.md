@@ -3,7 +3,7 @@
 * 作者：Aiven <br/>
 * 联系方式：aiven163@sina.com <br/>
 
-#Descript
+#Description
 
 这是一个Android开发日志管理库，在项目中，能够通过Logcat输出日志信息，同时可以将日志已经错误信息记录到指定的目录文件夹下面。
 日志记录规则是按照日期生成的txt文件。每日生成一个错误日志文件
