@@ -6,7 +6,9 @@
 #Description
 
 这是一个Android开发日志管理库，在项目中，能够通过Logcat输出日志信息，同时可以将日志已经错误信息记录到指定的目录文件夹下面。
-日志记录规则是按照日期生成的txt文件。每日生成一个错误日志文件
+日志记录规则是按照日期生成的txt文件。每日生成一个错误日志文件<br/>
+
+##### 当前最新版本V：`1.0.2`
 
 #使用方式如下
 
@@ -171,4 +173,26 @@ public class Logs {
     }
 }
 ```
+
+
+# 版本追踪<br/>
+
+ * 1.0.1 <br/>
+   修改bug,修改日志栈长度限制，防止突然间增加超过三十条日志，在写日志来不及的时候导致阻塞队列溢出问题。
+ 
+ * 1.0.2 <br/>
+   增加全局异常崩溃日志抓取记录，将会在输出在根目录中的crash目录中。具体配置如下
+   
+   调用 LogConfg 类进行配置：<br/>
+   ```Java 
+    /**
+     * 这是需要传入Application或Activity的getApplicationContext()返回的Context
+     * @param context
+     */
+    public static void configGlobleCrash(Context context) {
+        CrashHandler.getInstance(context);
+    }
+  ```
+  配置好后可以获取得到系统的日志，如果要传到服务器，目前暂时只支持测试版本记录该日志，正式版本后续更新...
+
 
