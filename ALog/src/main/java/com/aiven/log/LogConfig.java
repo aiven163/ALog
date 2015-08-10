@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Environment;
 import android.text.TextUtils;
 
+import com.aiven.log.action.CrashHandler;
+
 /**
  * @author Aiven
  * @date 2014-6-3  下午6:12:24
@@ -42,7 +44,11 @@ public class LogConfig {
         }
     }
 
+    /**
+     * 这是需要传入Application或Activity的getApplicationContext()返回的Context
+     * @param context
+     */
     public static void configGlobleCrash(Context context) {
-
+        CrashHandler.getInstance(context);
     }
 }
