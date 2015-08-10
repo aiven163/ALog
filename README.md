@@ -183,14 +183,13 @@ public class Logs {
  * 1.0.2 <br/>
    增加全局异常崩溃日志抓取记录，将会在输出在根目录中的crash目录中。具体配置如下
    
-   调用 LogConfg 类进行配置：<br/>
+   调用 `LogConfg` 类中的 `configGlobleCrash()` 方法：<br/>
    ```Java 
     /**
      * 这是需要传入Application或Activity的getApplicationContext()返回的Context
      * @param context
      */
     public static void configGlobleCrash(Context context) {
-        CrashHandler.getInstance(context);
     }
   ```
   配置好后可以获取得到系统的日志，如果要传到服务器，目前暂时只支持测试版本记录该日志，正式版本后续更新...
