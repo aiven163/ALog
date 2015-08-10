@@ -2,6 +2,7 @@ package com.aiven.log;
 
 import java.io.File;
 
+import android.content.Context;
 import android.os.Environment;
 import android.text.TextUtils;
 
@@ -39,5 +40,9 @@ public class LogConfig {
             return Environment
                     .getExternalStorageDirectory() + File.separator + appRootName + File.separator;
         }
+    }
+
+    public static void configGlobleCrash(Context context) {
+
     }
 }
