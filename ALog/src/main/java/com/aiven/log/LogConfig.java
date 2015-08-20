@@ -29,6 +29,11 @@ public class LogConfig {
     public static String logFileSavePath = "";
 
     /**
+     * 设置为true后，无论是否开启Debug和recodeAble模式,出现崩溃信息都记录到文件
+     */
+    public static boolean mustCrashRecord = false;
+
+    /**
      * 日志目录文件夹名称(一般为应用名称)
      */
     public static final String appRootName = "log";
@@ -46,9 +51,12 @@ public class LogConfig {
 
     /**
      * 这是需要传入Application或Activity的getApplicationContext()返回的Context
+     *
      * @param context
      */
     public static void configGlobleCrash(Context context) {
         CrashHandler.getInstance(context);
     }
+
+
 }

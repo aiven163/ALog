@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.aiven.log.action.LogRecodeUtils;
 import com.aiven.log.model.LogMode;
+import com.aiven.log.util.LogFileUtil;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -224,9 +225,9 @@ public class Logs {
         if (msg == null) {
             msg = "null";
         }
-        if (LogConfig.Debug) {
+        if (LogConfig.Debug || LogConfig.mustCrashRecord) {
             Log.e(LogConfig.DEFAULT_TAG, msg);
-            if (LogConfig.recodeAble) {
+            if (LogConfig.recodeAble || LogConfig.mustCrashRecord) {
                 LogMode md = new LogMode(LogConfig.DEFAULT_TAG, msg.toString());
                 md.setCrashInfo(true);
                 LogRecodeUtils.getInstance().addLog(md);
@@ -234,16 +235,16 @@ public class Logs {
         }
     }
 
-    public static void clearAllLogs() {
+
+    /**
+     * 清除本地所有的日志文件
+     */
+    public static void clearLogFiles() {
         String filePath = LogConfig.getLogSavePath();
         File file = new File(filePath);
-        if (file.exists() && file.isDirectory()) {
-            File[] files = file.listFiles();
-            if (files != null && files.length > 0) {
-                for (int j = 0; j < files.length; j++) {
-                    files[j].delete();
-                }
-            }
-        }
+        LogFileUtil util = new LogFileUtil();
+        util.deleteFolder(file);
     }
+
+
 }
