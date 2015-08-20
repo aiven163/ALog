@@ -14,7 +14,7 @@
 
 * 如果你使用Eclipse，请下载源码，作为一个library 项目引用<br/>
 * 如果你使用的是AndroidStudio则可以再的App项目的build.gradle文件中添加下面代码即可，不用在下载源码和jar包<br/>
-    `compile 'com.aiven.log:ALog:1.0.2'`
+    `compile 'com.aiven.log:ALog:1.0.3'`
     
 
 1、首先在我们的Application的onCreate方法中添加以下代码，如果你没有重写Application类的话，可以在你APP的启动Activity的onCreate()方法中添加如下代码。<br>
@@ -194,4 +194,21 @@ public class Logs {
   ```
   配置好后可以获取得到系统的日志，如果要传到服务器，目前暂时只支持测试版本记录该日志，正式版本后续更新...
 
-
+ * 1.0.3 <br/>
+   可配置即使关闭Debug和recordable后仍然记录crash日志文件，主要解决发布出去的版本可以只收集崩溃日志，而不产生其他日志文件 <br/>
+    `LogConfg` 类中 <br/>
+    ```java
+    /**
+     * 设置为true后，无论是否开启Debug和recodeAble模式,出现崩溃信息都记录到文件
+     */
+    public static boolean mustCrashRecord = false;
+    ```
+    <br/><br/>
+    更改清除日志记录文件方法，在`Logs`类中。<br/>
+    ```Java
+    /**
+     * 清除本地所有的日志文件
+     */
+    public static void clearLogFiles() {}
+    ```
+    
