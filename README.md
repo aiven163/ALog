@@ -236,7 +236,7 @@ public class Logs {
      第一个：类型<br/>
          主要有四个值：<br/>
          
-         ```Java
+         ```java
          
           LogManager.CLOSE;                 //关闭状态
           LogManager.ONLY_PRINT_LOG;        //仅仅只在开发时LogCat中输出所有的日志
@@ -244,7 +244,7 @@ public class Logs {
           LogManager.ONLY_COLLECT_CRASH;    //仅仅只收集崩溃日志
           
           ```
-        <br/>
+         <br/>
      第二个：根目录地址<br/><br/><br/>
      
      
