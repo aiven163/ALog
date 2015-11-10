@@ -218,9 +218,9 @@ public class Logs {
    
    ```Java
    String path = Environment.getExternalStorageDirectory().getAbsolutePath() 
-   + File.separator + "log";
+                + File.separator + "log";
     LogManager.getInstance().initLogManager(LogManager.PRINT_AND_SAVE, path)
-        .openGlobalCrashHanler(this);
+                         .openGlobalCrashHanler(this);
         
      ```
      <br/>
@@ -235,11 +235,14 @@ public class Logs {
      
      第一个：类型<br/>
          主要有四个值：<br/>
+         
          ```Java
-          LogManager.CLOSE;  //关闭状态
-          LogManager.ONLY_PRINT_LOG;  //仅仅只在开发时LogCat中输出所有的日志
-          LogManager.PRINT_AND_SAVE;  //打印并且保存日志（所有的，包括崩溃）
-          LogManager.ONLY_COLLECT_CRASH;  //仅仅只收集崩溃日志
+         
+          LogManager.CLOSE;                 //关闭状态
+          LogManager.ONLY_PRINT_LOG;        //仅仅只在开发时LogCat中输出所有的日志
+          LogManager.PRINT_AND_SAVE;        //打印并且保存日志（所有的，包括崩溃）
+          LogManager.ONLY_COLLECT_CRASH;    //仅仅只收集崩溃日志
+          
           ```
         <br/>
      第二个：根目录地址<br/><br/><br/>
