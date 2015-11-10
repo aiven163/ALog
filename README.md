@@ -217,15 +217,36 @@ public class Logs {
 分别放到了不同的目录文件中。配置也变得简单，具体如下：<br/>
    
    ```Java
-   String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "log";
-        LogManager.getInstance().initLogManager(LogManager.PRINT_AND_SAVE, path).openGlobalCrashHanler(this);
+   String path = Environment.getExternalStorageDirectory().getAbsolutePath() 
+   + File.separator + "log";
+    LogManager.getInstance().initLogManager(LogManager.PRINT_AND_SAVE, path)
+        .openGlobalCrashHanler(this);
         
      ```
+     <br/>
+     其中 
+     ```Java 
+        openGlobalCrashHanler(this);//这个this 其实是一个Application
+     ```
+     这个方法是开启全局崩溃日志抓取功能，值得注意的是，这里传入的参数是一个Application。不能传入一个Activity的Context。这样是为了方式Activity被一直引用而无法销毁的原因。
+     <br/><br/><br/>
+     
     具体说明一下：首先配置一个存放日志的根目录路径。然后初始化日志管理器，参数说明：<br/>
      
      第一个：类型<br/>
-        
-     第二个：根目录地址
+         主要有四个值：<br/>
+         ```Java
+          LogManager.CLOSE;  //关闭状态
+          LogManager.ONLY_PRINT_LOG;  //仅仅只在开发时LogCat中输出所有的日志
+          LogManager.PRINT_AND_SAVE;  //打印并且保存日志（所有的，包括崩溃）
+          LogManager.ONLY_COLLECT_CRASH;  //仅仅只收集崩溃日志
+          ```
+        <br/>
+     第二个：根目录地址<br/><br/><br/>
+     
+     
+     这样就配置完了，可以用了，是不是简单了很多
+     
      
      
 
