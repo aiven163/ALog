@@ -144,7 +144,7 @@ public class Logs {
      * 清除本地所有的日志文件
      */
     public static void clearLogFiles() {
-        LogManager.getInstance().clearLog();
+        
     }
     
 }
