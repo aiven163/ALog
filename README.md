@@ -19,23 +19,6 @@
 
 1、首先在我们的Application的onCreate方法中添加以下代码，如果你没有重写Application类的话，可以在你APP的启动Activity的onCreate()方法中添加如下代码。<br>
 
- ```Java
-        /**
-         * 开启日志管理工具
-         */
-        LogConfig.Debug=true;
-
-        /**
-         * 开启本地记录文件
-         */
-        LogConfig.recodeAble=true;
-
-        /**
-         * 日志存储本地的根目录
-         */
-        LogConfig.logFileSavePath= Environment
-                .getExternalStorageDirectory()+"MyAppName";
-```
 
 只有配置好了，日志才能正常的输出在LogCat和记录在本地。<br>
 
@@ -184,33 +167,16 @@ public class Logs {
    增加全局异常崩溃日志抓取记录，将会在输出在根目录中的crash目录中。具体配置如下
    
    调用 `LogConfg` 类中的 `configGlobleCrash()` 方法：<br/>
-   ```Java 
-    /**
-     * 这是需要传入Application或Activity的getApplicationContext()返回的Context
-     * @param context
-     */
-    public static void configGlobleCrash(Context context) {
-    }
-  ```
+
   配置好后可以获取得到系统的日志，如果要传到服务器，目前暂时只支持测试版本记录该日志，正式版本后续更新...
 
  * 1.0.3 <br/>
    可配置即使关闭Debug和recordable后仍然记录crash日志文件，主要解决发布出去的版本可以只收集崩溃日志，而不产生其他日志文件 <br/>
-    `LogConfg` 类中 <br/>
-    ```java
-    /**
-     * 设置为true后，无论是否开启Debug和recodeAble模式,出现崩溃信息都记录到文件
-     */
-    public static boolean mustCrashRecord = false;
-    ```
     <br/><br/>
-    更改清除日志记录文件方法，在`Logs`类中。<br/>
-    ```Java
-    /**
-     * 清除本地所有的日志文件
-     */
-    public static void clearLogFiles() {}
-    ```
+    更改清除日志记录文件方法，在`Logs`类中。<br/><br/><br/>
+
+
+###大改动
     
  * 1.1.0 <br/>
     在这个版本改动比较大，所以直接跳到了1.1.0。主要把普通日志，异常日志，崩溃日志
