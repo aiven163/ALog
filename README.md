@@ -237,14 +237,8 @@ public class Logs {
      主要有四个值：
       ```java
           LogManager.CLOSE;                 //关闭状态
-     ```
-     ```Java
           LogManager.ONLY_PRINT_LOG;        //仅仅只在开发时LogCat中输出所有的日志
-     ```
-     ```Java
           LogManager.PRINT_AND_SAVE;        //打印并且保存日志（所有的，包括崩溃）
-     ```
-     ```Java
           LogManager.ONLY_COLLECT_CRASH;    //仅仅只收集崩溃日志
      ```
          
