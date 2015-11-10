@@ -141,19 +141,12 @@ public class Logs {
     }
 
    /**
-     * 输出崩溃日志，将会在输出在根目录中的crash目录中
-     *
-     * @param msg
-     * @Description
-     * @author Aiven
+     * 清除本地所有的日志文件
      */
-    public static void logCrash(String tag, String msg) {
-       
+    public static void clearLogFiles() {
+        LogManager.getInstance().clearLog();
     }
-
-    public static void clearAllLogs() {
-       
-    }
+    
 }
 ```
 
