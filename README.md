@@ -17,7 +17,7 @@
     `compile 'com.aiven.log:ALog:1.1.0'`
     
 
-1、首先在我们的Application的onCreate方法中添加以下代码，如果你没有重写Application类的话，可以在你APP的启动Activity的onCreate()方法中添加如下代码。<br>
+1、首先在我们的Application的onCreate方法中添加以下代码，如果你没有重写Application类的话，可以在你APP的启动Activity的onCreate()方法中添加如下代码。(已过期，见最新版本说明)<br>
 
 
 只有配置好了，日志才能正常的输出在LogCat和记录在本地。<br>
