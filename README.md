@@ -234,17 +234,21 @@ public class Logs {
     具体说明一下：首先配置一个存放日志的根目录路径。然后初始化日志管理器，参数说明：<br/>
      
      第一个：类型<br/>
-         主要有四个值：<br/>
+         主要有四个值：
          
          ```java
-         
           LogManager.CLOSE;                 //关闭状态
+         ```
+         ```Java
           LogManager.ONLY_PRINT_LOG;        //仅仅只在开发时LogCat中输出所有的日志
+         ```
+         ```Java
           LogManager.PRINT_AND_SAVE;        //打印并且保存日志（所有的，包括崩溃）
+         ```
+         ```Java
           LogManager.ONLY_COLLECT_CRASH;    //仅仅只收集崩溃日志
-          
-          ```
-         <br/>
+         ```
+         
      第二个：根目录地址<br/><br/><br/>
      
      
