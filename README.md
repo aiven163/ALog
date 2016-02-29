@@ -212,7 +212,16 @@ public class Logs {
        ```Java
          supportSubTag();
        ```
-       增加这个方法调用即可
-     
+       增加这个方法调用即可<br/>
+       
+       例：<br/>
+       ```Java
+       String path = Environment.getExternalStorageDirectory().getAbsolutePath() 
+                + File.separator + "log";
+       LogManager.getInstance().initLogManager(LogManager.PRINT_AND_SAVE, path)
+                         .openGlobalCrashHanler(this).supportSubTag();
+                         
+        //注意：这里的this只的是Application的上下文
+       ```
 
 
