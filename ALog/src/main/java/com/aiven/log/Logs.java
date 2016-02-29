@@ -44,7 +44,6 @@ public class Logs {
                 }
                 printWriter.close();
                 String result = writer.toString();
-                writer = null;
                 LogManager.getInstance().pushLog(new LogBean("ERROR", result, LOG_TYPE_EXCEPTION));
             }
         }
