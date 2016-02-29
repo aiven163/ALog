@@ -8,13 +8,13 @@
 这是一个Android开发日志管理库，在项目中，能够通过Logcat输出日志信息，同时可以将日志已经错误信息记录到指定的目录文件夹下面。
 日志记录规则是按照日期生成的txt文件。每日生成一个错误日志文件<br/>
 
-##### 当前最新版本V：`1.1.0`
+##### 当前最新版本V：`1.2.0`
 
 #使用方式如下
 
 * 如果你使用Eclipse，请下载源码，作为一个library 项目引用<br/>
 * 如果你使用的是AndroidStudio则可以再的App项目的build.gradle文件中添加下面代码即可，不用在下载源码和jar包<br/>
-    `compile 'com.aiven.log:ALog:1.1.0'`
+    `compile 'com.aiven.log:ALog:1.2.0'`
     
 
 1、首先在我们的Application的onCreate方法中添加以下代码，如果你没有重写Application类的话，可以在你APP的启动Activity的onCreate()方法中添加如下代码。(已过期，见最新版本说明)<br>
@@ -205,6 +205,14 @@ public class Logs {
      这样就配置完了，可以用了，是不是简单了很多
      
      
+     * 1.2.0 <br/>
+       增加分Tag记录日志<br/>
+       具体配置：<br/>
+       LogManager中增加了一个方法
+       ```Java
+         supportSubTag();
+       ```
+       增加这个方法调用即可
      
 
 
