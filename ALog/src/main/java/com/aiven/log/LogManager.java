@@ -45,6 +45,8 @@ public class LogManager {
 
     public static boolean printAble;
 
+    public boolean subTag = false;
+
     private WholeCrashHandler crashHandler;
 
     private static LogManager mInstance;
@@ -97,6 +99,11 @@ public class LogManager {
     public LogManager openGlobalCrashHanler(Application application) {
         crashHandler = WholeCrashHandler.getInstance();
         crashHandler.init(application.getApplicationContext());
+        return this;
+    }
+
+    public LogManager supportSubTag() {
+        subTag = true;
         return this;
     }
 

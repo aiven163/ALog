@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.aiven.log.LogManager;
 import com.aiven.log.Logs;
@@ -30,7 +31,7 @@ public class WholeCrashHandler implements UncaughtExceptionHandler {
         return crashHandler;
     }
 
-    private Thread.UncaughtExceptionHandler mDefaultHandler;
+    private UncaughtExceptionHandler mDefaultHandler;
     private Context context;
 
     public void init(Context context) {
@@ -77,6 +78,7 @@ public class WholeCrashHandler implements UncaughtExceptionHandler {
             return false;
         collectDeviceInfo();
         String log = saveCrashInfo2File(ex);
+        Log.e("crash", log);
         LogManager.getInstance().pushLog(new LogBean("crash", log, Logs.LOG_TYPE_CRASH));
         if (mAppInfoMap != null) {
             mAppInfoMap.clear();
@@ -99,6 +101,8 @@ public class WholeCrashHandler implements UncaughtExceptionHandler {
                 }
             }
         }
+        sb.append("错误原因:" + ex.toString() + "\n");
+        sb.append("具体如下:\n=======================================================\n");
         Writer writer = new StringWriter();
         PrintWriter printWriter = new PrintWriter(writer);
         ex.printStackTrace(printWriter);
@@ -130,12 +134,12 @@ public class WholeCrashHandler implements UncaughtExceptionHandler {
                 mAppInfoMap.add(new AppInfo("versionCode", versionCode));
                 mAppInfoMap.add(new AppInfo("设备基本信息", ""));
                 mAppInfoMap.add(new AppInfo("型号", Build.MODEL));
-                mAppInfoMap.add(new AppInfo("SDK", String.valueOf(android.os.Build.VERSION.SDK_INT)));
-                mAppInfoMap.add(new AppInfo("SystemVersion", android.os.Build.VERSION.RELEASE));
+                mAppInfoMap.add(new AppInfo("SDK", String.valueOf(Build.VERSION.SDK_INT)));
+                mAppInfoMap.add(new AppInfo("SystemVersion", Build.VERSION.RELEASE));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    mAppInfoMap.add(new AppInfo("SUPPORTED_ABIS", arrToStr(android.os.Build.SUPPORTED_ABIS)));
-                    mAppInfoMap.add(new AppInfo("SUPPORTED_32_BIT_ABIS", arrToStr(android.os.Build.SUPPORTED_32_BIT_ABIS)));
-                    mAppInfoMap.add(new AppInfo("SUPPORTED_64_BIT_ABIS", arrToStr(android.os.Build.SUPPORTED_64_BIT_ABIS)));
+                    mAppInfoMap.add(new AppInfo("SUPPORTED_ABIS", arrToStr(Build.SUPPORTED_ABIS)));
+                    mAppInfoMap.add(new AppInfo("SUPPORTED_32_BIT_ABIS", arrToStr(Build.SUPPORTED_32_BIT_ABIS)));
+                    mAppInfoMap.add(new AppInfo("SUPPORTED_64_BIT_ABIS", arrToStr(Build.SUPPORTED_64_BIT_ABIS)));
                 } else {
                     mAppInfoMap.add(new AppInfo("CPU_ABI", Build.CPU_ABI));
                     mAppInfoMap.add(new AppInfo("CPU_ABI2", Build.CPU_ABI2));

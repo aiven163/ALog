@@ -29,7 +29,7 @@ public abstract class BaseWriter {
         mWriter.flush();
     }
 
-    private void checkIsValid(LogBean log) {
+    protected void checkIsValid(LogBean log) {
         if (mWriter == null) {
             initWriter();
             return;

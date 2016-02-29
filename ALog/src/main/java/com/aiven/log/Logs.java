@@ -16,9 +16,9 @@ import java.io.Writer;
  */
 public class Logs {
 
-    public static final int LOG_TYPE_COMMON = 0X101;
-    public static final int LOG_TYPE_EXCEPTION = 0X202;
-    public static final int LOG_TYPE_CRASH = 0X303;
+    public static final int LOG_TYPE_COMMON = 0XFF00;
+    public static final int LOG_TYPE_EXCEPTION = 0XF000;
+    public static final int LOG_TYPE_CRASH = 0X0F00;
 
 
     /**

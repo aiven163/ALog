@@ -42,6 +42,10 @@ public class LogBean {
         return type;
     }
 
+    public String getTag() {
+        return tag;
+    }
+
     public void setType(int type) {
         this.type = type;
     }
