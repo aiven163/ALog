@@ -1,4 +1,4 @@
-# AndroidLogsManager
+# ALog
 
 * 作者：Aiven <br/>
 * 联系方式：aiven163@sina.com <br/>
